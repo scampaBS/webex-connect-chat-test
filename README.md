@@ -59,4 +59,21 @@ Ask the Webex administrator to verify the widget ID, deployment region,
 publication/enablement, and allowed website domain. The 404 alone does not
 identify which configuration needs changing.
 
+### Resolved: website domain registration
+
+Later on November 17, 2026, adding `scampabs.github.io` to the widget's
+Websites configuration and saving resolved the settings failure. The settings
+endpoint returned HTTP 200, the launcher appeared, and opening it displayed
+**Customer Service** with a **New Conversation** button. No conversation was
+started or message sent during verification.
+
+For this site, configure the domain as `scampabs.github.io`, without `https://`
+or the `/webex-connect-chat-test/` path. In Webex Engage, navigate to
+**Assets > Channel assets > Livechat > Edit > Websites** to configure it.
+See the [official Livechat setup guide](https://help.webexconnect.io/docs/livechat).
+
+A separate proactive-settings endpoint still returned HTTP 404 during this
+verification; it did not prevent the launcher or chat panel from opening.
+Proactive messaging and end-to-end message delivery remain unverified.
+
 No build step, package installation, or API credentials are required.

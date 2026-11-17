@@ -19,6 +19,9 @@ then select **main** and **/ (root)**.
 
 Expected URL: https://scampaBS.github.io/webex-connect-chat-test/
 
+This repository is public because the account's current plan rejected Pages
+activation for a private repository. Pages is enabled on `main` at the root.
+
 Pages from a private repository requires an eligible paid GitHub plan. A private
 repository does not make the published Pages site private: visitors can still
 inspect the widget identifiers and all served HTML, CSS, and JavaScript.
@@ -39,5 +42,21 @@ that a conversation was delivered.
 
 The vendor-provided fallback says the browser is unsupported whenever the loader
 fails; network blocking can cause the same message.
+
+## Initial live verification
+
+On November 17, 2026, the Pages deployment succeeded and the live page loaded
+the Cisco initializer, general script, and widget iframe. However, the Cisco
+widget settings endpoint returned HTTP 404 for the supplied widget ID and
+`host=scampabs.github.io`:
+
+```text
+https://widget-api.produs1.ciscoccservice.com/livechats/8482B03F-3962-4381-B6B5-B6D76837E3D0/settings?host=scampabs.github.io&$callback=?
+```
+
+The chat launcher remained hidden, so end-to-end messaging could not be tested.
+Ask the Webex administrator to verify the widget ID, deployment region,
+publication/enablement, and allowed website domain. The 404 alone does not
+identify which configuration needs changing.
 
 No build step, package installation, or API credentials are required.
